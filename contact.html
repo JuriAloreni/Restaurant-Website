@@ -8,47 +8,49 @@
 </head>
 <body>
   <header>
-    <h1>تواصل معنا </h1>
+    <h1>Contact Us</h1>
     <nav>
-      <!--<a href="contact.html">تواصل معنا </a>
-      <a href="order.php">الطلبات</a>
-      <a href="menu.php">قائمة الطعام</a>-->
-      <a href="index.html">الصفحة الرئيسية</a>
+      <!--
+      <a href="contact.html">Contact Us</a>
+      <a href="order.php">Orders</a>
+      <a href="menu.php">Menu</a>
+      -->
+      <a href="index.html">Home</a>
     </nav>
     <br>
     <hr color="pink"><hr color="pink">
   </header>
   
   <section class="contact">
-    <h2> !يسعدنا تواصلك معنا </h2>
+    <h2>We are happy to hear from you!</h2>
     <form id="contactForm">
-      <label for="name">: الاسم</label><br>
-      <input type="text" id="name" name="name" placeholder="اسمك" required><br><br>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
 
-      <label for="email">:البريد الإلكتروني</label><br>
-      <input type="email" id="email" name="email" placeholder="example@email.com"  required><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
 
-      <label for="message">:الرسالة</label><br>
-      <textarea id="message" name="message"  placeholder="رسالتك"  rows="4" required></textarea><br><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br><br>
       <div class="jj">
-      <button type="submit">💌إرسال الرسالة</button>
+        <button type="submit">💌 Send Message</button>
       </div>
-      
     </form>
   </section>
+  
   <br><br><br><br><br>
-  <footer  class="jh">
+  <footer class="jh">
     <p>2025 Restaurant</p>
   </footer>
-    <script>
-document.addEventListener('submit', e => {
-  if (e.target.matches('form')) {
-    e.preventDefault();
-    alert('تم الإرسال ✅');
-    e.target.reset();
-  }
-});
-</script>
 
+  <script>
+    document.addEventListener('submit', e => {
+      if (e.target.matches('form')) {
+        e.preventDefault();
+        alert('Message sent ✅');
+        e.target.reset();
+      }
+    });
+  </script>
 </body>
 </html>
