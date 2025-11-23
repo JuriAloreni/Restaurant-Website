@@ -1,14 +1,15 @@
-include 'db.php';
+
+<?php include 'db.php'; ?>
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>صفحة الطلب - مطعم البرقر</title>
+    <title>Order Page - Burger Restaurant</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #fff;
-            direction: rtl;
+            direction: ltr;
             margin: 0;
             padding: 0;
         }
@@ -78,53 +79,53 @@ include 'db.php';
 </head>
 <body>
 
-    <div class="header">صفحة الطلب</div>
+    <div class="header">Order Page</div>
 
     <nav>
-        <a href="index.html">الصفحة الرئيسية</a> |
-        <a href="menu.php">قائمة الطعام</a>
+        <a href="index.html">Home</a> |
+        <a href="menu.php">Menu</a>
     </nav>
 
     <hr><hr>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
-        $item = $_POST['item'];
-        $quantity = $_POST['quantity'];
+        $name = htmlspecialchars($_POST['name']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $item = htmlspecialchars($_POST['item']);
+        $quantity = intval($_POST['quantity']);
 
         echo "<div class='success'>";
-        echo "✅ تم استلام طلبك بنجاح يا <b>$name</b><br>";
-        echo "الطلب: <b>$item</b> × $quantity<br>";
-        echo "سيتم التواصل معك على الرقم: <b>$phone</b>";
+        echo "✅ Your order has been received, <b>$name</b><br>";
+        echo "Order: <b>$item</b> × $quantity<br>";
+        echo "We will contact you at: <b>$phone</b>";
         echo "</div>";
     } else {
     ?>
     <form method="POST" action="">
-        <label for="name">الاسم الكامل:</label>
+        <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="phone">رقم الجوال:</label>
+        <label for="phone">Phone Number:</label>
         <input type="text" id="phone" name="phone" required>
 
-        <label for="item">اختر الصنف:</label>
+        <label for="item">Choose Item:</label>
         <select id="item" name="item" required>
-            <option value="">-- اختر --</option>
-            <option value="برقر كلاسيك">برقر كلاسيك</option>
-            <option value="برقر جبن">برقر جبن</option>
-            <option value="برقر دجاج">برقر دجاج</option>
-            <option value="برقر سبايسي">برقر سبايسي</option>
-            <option value="كوكا كولا">كوكا كولا</option>
-            <option value="سبرايت">سبرايت</option>
-            <option value="عصير برتقال">عصير برتقال</option>
-            <option value="عصير مانجو">عصير مانجو</option>
+            <option value="">-- Select --</option>
+            <option value="Classic Burger">Classic Burger</option>
+            <option value="Cheese Burger">Cheese Burger</option>
+            <option value="Chicken Burger">Chicken Burger</option>
+            <option value="Spicy Burger">Spicy Burger</option>
+            <option value="Coca Cola">Coca Cola</option>
+            <option value="Sprite">Sprite</option>
+            <option value="Orange Juice">Orange Juice</option>
+            <option value="Mango Juice">Mango Juice</option>
         </select>
 
-        <label for="quantity">الكمية:</label>
+        <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" min="1" required>
 
-        <input type="submit" value="إرسال الطلب">
+        <input type="submit" value="Place Order">
     </form>
     <?php } ?>
 
