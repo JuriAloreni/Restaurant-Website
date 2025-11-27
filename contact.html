@@ -5,40 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Restaurant</title>
   <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
+
   <header>
-    <h1>Contact Us</h1>
+    <h1>CONTACT US !</h1>
     <nav>
-      <!--
-      <a href="contact.html">Contact Us</a>
-      <a href="order.php">Orders</a>
-      <a href="menu.php">Menu</a>
-      -->
-      <a href="index.html">Home</a>
+      <a href="index.html">HOME</a>
     </nav>
-    <br>
-    <hr color="pink"><hr color="pink">
   </header>
-  
-  <section class="contact">
-    <h2>We are happy to hear from you!</h2>
-    <form id="contactForm">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br><br>
-      <div class="jj">
-        <button type="submit">💌 Send Message</button>
+  <div class="contact-container">
+    <form action="" class="contact-left">
+      <div class="contact-left-titel">
+        <h2>Get in touch</h2>
+        <hr>
       </div>
+
+      <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
+      <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+
+      <textarea name="message" placeholder="Your message" class="contact-inputs" required></textarea>
+
+      <button type="submit">Send <img src="assets/arrow_icon.png" alt=""></button>
     </form>
-  </section>
+
+
+    <div class="contact-right">
+      <!-- <img src="assets/right_img.png" alt=""> -->
+    </div>
+    
+    
+    <div class="social">
+      <a href="#" class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
   
-  <br><br><br><br><br>
   <footer class="jh">
     <p>2025 Restaurant</p>
   </footer>
@@ -47,10 +53,12 @@
     document.addEventListener('submit', e => {
       if (e.target.matches('form')) {
         e.preventDefault();
-        alert('Message sent ✅');
+        alert('Send ✅');
         e.target.reset();
       }
     });
   </script>
+
 </body>
 </html>
+
