@@ -4,38 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Restaurant Website</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-    <h1>MARINA LUXE Restaurant 🍽️</h1>
+    <h1>Restaurant🍽️</h1>
     <nav>
-       <!-- <a href="index.html">Home</a> -->
-       <a href="order.php">Orders</a>
-       <a href="menu.php">Menu</a>
-       <a href="contact.html">Contact Us</a>
+        <a href="order.php">ORDER</a>
+        <a href="menu.php">MENU</a>
+        <a href="contact.html">CONTACT</a>
     </nav>
 </header>
-<br>
-<hr color="pink"><hr color="pink">
+ <section class="offers-section">
+  <h2 class="ji">OFFERS</h2>
 
-<section class="offers-section">
-    <h2 class="ji">Our Offers</h2>
-    <br><br>
-    <div class="offers-container">
-        <img src="burgerpink.jpg" alt="Delicious Burger" height="250" width="690">
-        <img src="pizzapink.jpg" alt="Pizza" height="250" width="190">
-        <img src="oorrdd.png" alt="Order Now" height="250" width="190">
+  <div class="offers-container">
+    <div class="offer-card">
+      <img src="mealOff.jpg" alt="burger">
     </div>
-    <br>
-    <p>
-        <a href="menu.php">What are you waiting for? Order Now!</a>
-    </p>
-</section>
 
-<br><br><br><br><br>
-<footer class="jh">
+    <div class="offer-card">
+      <img src="pizzaoff.jpg" alt="pizza">
+    </div>
+
+    <div class="offer-card">
+      <img src="orderoff.jpg" alt="delivery">
+    </div>
+
+    <div class="offer-card">
+      <img src="friesoff.jpg" alt="delivery">
+    </div>
+  </div>
+
+  <div class="order-msg">
+    <a href="menu.php">What are you waiting for, order now!</a>
+  </div>
+</section>
+  <footer class="jh">
     <p>2025 Restaurant</p>
-</footer>
-<script src="script.js"></script>
+  </footer>
+<script>
+  const slides = document.querySelectorAll('.offer-slide');
+  const prev   = document.querySelector('.slider-btn.prev');
+  const next   = document.querySelector('.slider-btn.next');
+  let current = 0;
+  function showSlide(i) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  showSlide(current);
+
+  next.addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  prev.addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+</script>
 </body>
+</html>
+
